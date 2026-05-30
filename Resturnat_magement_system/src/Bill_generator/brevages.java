@@ -7,31 +7,26 @@ public class brevages extends menu_item {
     private String pepsi;
     private int amount;
 
-    public brevages(String name, double base_price) {
-        super(name, base_price);
+    public brevages(String name) {
+        super(name, 0.0);
     }
 
     public void addpepsi(int amount){
-        this.price = 20;
+        this.price = 20 * amount;
     }
     public void addcoke(int amount){
-        this.price = 0;
-
+        this.price = 30 * amount;
     }
-    public void coffe(){
-        this.price = 50 ;
+    public void coffe(int amount){
+        this.price = 50 * amount;
     }
     public void getbill(){
         System.out.println("total bill generated");
-
         System.out.println(this.price);
-
     }
-
 
     @Override
     public double calculatprice() {
-        System.out.println(this.price);
-        return 0;
+        return this.price;
     }
 }
